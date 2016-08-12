@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title></title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="author" content="Salah Ahmed">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
-		<!-- bootstrap css -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	</head>
-	<body>
-		<button id="submit" type="submit">submit</button>
-		<table id="test">
-			<thead>
-				<tr>
-					<th>number<th>
-				</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Salah Ahmed">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+  </head>
+  <body>
+    <button id="submit" type="submit">submit</button>
+    <table id="test">
+      <thead>
+        <tr>
+          <th>number<th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="results"></div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="{{url_for('static', filename='loading.js')}}"></script>
-	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='loading.js')}}"></script>
+  </body>
 </html>

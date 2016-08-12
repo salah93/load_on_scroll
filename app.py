@@ -13,7 +13,7 @@ def index():
 def table():
     index = int(request.args.get('index', 0))
     r = int(request.args.get('range', 50))
-    table = range(100)[index: index + r]
+    table = range(10000000)[index: index + r]
     return json.dumps({'table': table})
 
 
