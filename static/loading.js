@@ -23,7 +23,6 @@ $(window).scroll(function() {
 	$('.results').addClass('loader');
     index = index + range;
     $.getJSON('/table', {index: index, range: range}, function(data) {
-      $('#load').html
       var table = data.table;
       if (table.length == 0)
         $(window).off('scroll');
