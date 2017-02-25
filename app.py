@@ -3,7 +3,12 @@ import random
 import string
 from dogpile.cache import make_region
 from flask import Flask, render_template, request
+from dogpile.cache import make_region
 
+
+MEMORY_CACHE = make_region().configure(
+            'dogpile.cache.memory',
+            expiration_time=3600)
 app = Flask(__name__)
 
 MEMORY_CACHE = make_region().configure(
