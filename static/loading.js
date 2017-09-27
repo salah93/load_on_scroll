@@ -1,6 +1,4 @@
-var index = 0;
 var range = 50;
-var query = "1234"
 
 function addToTable(table) {
   for(var i = 0; i < range && i < table.length; i++) {
@@ -12,7 +10,8 @@ function addToTable(table) {
 }
 
 $('#submit').click(function(){
-  $.getJSON('/table', {query: query, index: index, range: range}, function(data) {
+  range = $('#range').val() || range;
+  $.getJSON('/table', {range: range}, function(data) {
     var table = data.table;
     addToTable(table);
   });
@@ -20,16 +19,10 @@ $('#submit').click(function(){
 
 
 $(window).scroll(function() {
-  if($(window).scrollTop() == ($(document).height() - $(window).height())) {
+  if(parseInt($(window).scrollTop()) == ($(document).height() - $(window).height())) {
 	$('.results').addClass('loader');
-    index = index + range;
-    $.getJSON('/table', {query: query, index: index, range: range}, function(data) {
-      $('#load').html
-      var table = data.table;
-      if (table.length == 0)
-        $(window).off('scroll');
-      else
-        addToTable(table);
+    $.getJSON('/table', {range: range}, function(data) {
+      addToTable(data.table);
 	  $('.results').removeClass('loader');
     });
   }
