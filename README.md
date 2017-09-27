@@ -1,7 +1,5 @@
-## load on scroll 
-javascript + backend to load a page in increments as you scroll down
+## load on scroll
+experimenting with dogpile.cache, useful for caching on expensive functions
 
 
-### requirements
-+ python
-	+ flask
+This example highlights the caching behavior when dogpile is sent the same arguments to decorated function.
